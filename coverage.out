@@ -1,0 +1,11 @@
+mode: set
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:27.32,31.2 1 1
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:34.81,36.16 2 1
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:40.2,40.17 1 1
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:36.16,38.3 1 0
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:44.81,46.16 2 1
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:50.2,50.17 1 1
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:46.16,48.3 1 0
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:54.70,56.16 2 1
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:60.2,60.12 1 1
+github.com/s-antoshkin/go-grpc-service/internal/rocket/rocket.go:56.16,58.3 1 0

@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready --quiet --dbname=postgres --username=postgres || exit 1"]
+      interval: 10s
+      timeout: 10s
+      start_period: 20s
+      retries: 3
+    container_name: rockets-database
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - fullstack
+    volumes:
+      - database_postgres:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: grpc-microservice
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      DB_DB: postgres
+      DB_HOST: db
+      DB_TABLE: postgres
+      DB_PORT: 5432
+      DB_SSL_MODE: disable
+    ports:
+      - 50051:50051
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - fullstack
+
+volumes:
+  database_postgres:
+
+networks:
+  fullstack:
+    driver: bridge
